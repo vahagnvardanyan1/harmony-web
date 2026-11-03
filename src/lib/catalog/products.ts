@@ -68,7 +68,7 @@ export const PRODUCTS: readonly Product[] = [
     name: n("Crossover diamond bangle", "Խաչվող ադամանդե ապարանջան", "Браслет-перекрёст с бриллиантами") }),
   piece({ id: "flower-bangle", category: "bangles", photoCount: 1, isNew: true,
     name: n("Flower bangle", "«Ծաղիկ» ապարանջան", "Браслет «Цветы»") }),
-  piece({ id: "beaded-bangle", category: "bangles", photoCount: 3,
+  piece({ id: "beaded-bangle", category: "bangles", photoCount: 2,
     name: n("Beaded diamond bangle", "Ուլունքավոր ադամանդե ապարանջան", "Браслет из бусин с бриллиантами") }),
   piece({ id: "clover-band", category: "rings", photoCount: 3,
     name: n("Clover band", "«Երեքնուկ» մատանի", "Кольцо «Клевер»") }),
