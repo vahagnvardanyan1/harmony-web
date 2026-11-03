@@ -48,7 +48,7 @@ export const Lightbox = ({ content: { label, photos }, onClose }: LightboxProps)
       onClose={onClose}
       onKeyDown={onKeyDown}
       onClick={onBackdropClick}
-      className="fixed inset-0 m-0 h-svh max-h-none w-screen max-w-none animate-fade-in overflow-hidden bg-[rgb(20_19_19/.97)] p-0 text-ivory backdrop:bg-transparent"
+      className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none animate-fade-in overflow-hidden bg-[rgb(20_19_19/.97)] p-0 text-ivory backdrop:bg-[rgb(20_19_19/.97)]"
     >
       <div
         ref={trackRef}
