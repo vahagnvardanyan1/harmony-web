@@ -29,7 +29,7 @@ export const MobileMenu = ({ items, extra }: MobileMenuProps) => {
         ref={dialogRef}
         aria-label={t("menu")}
         onClick={onClick}
-        className="band fixed inset-y-0 left-0 m-0 h-full max-h-none w-[min(460px,100%)] max-w-none border-r border-gold-line p-0 open:animate-slide-in-left"
+        className="band fixed inset-y-0 left-0 m-0 h-dvh max-h-none w-[min(460px,100%)] max-w-none border-r border-gold-line p-0 open:animate-slide-in-left"
       >
         <div className="flex min-h-19 items-center justify-between border-b border-gold-line pl-8 pr-4">
           <Image src="/brand/harmony-stacked-gold.svg" alt="harmony gold jewelry" width={105} height={40} loading="eager" className="h-10 w-auto" />

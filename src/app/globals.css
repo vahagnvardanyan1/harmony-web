@@ -137,6 +137,11 @@
     outline-offset: 3px;
   }
 
+  /* An open pop-up or menu holds the page still; otherwise swipes scroll it and mobile toolbars collapse underneath */
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
   dialog::backdrop {
     background: rgb(15 14 14 / 0.55);
     backdrop-filter: blur(4px);
