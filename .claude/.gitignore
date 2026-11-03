@@ -1,0 +1,8 @@
+# Personal overrides — copy settings.local.example.json to start
+settings.local.json
+
+# Claude Code runtime state
+worktrees/
+plans/
+todos/
+cache/

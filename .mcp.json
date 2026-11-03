@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "next-devtools": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "next-devtools-mcp@latest"]
+    },
+    "react": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@picsart/react-mcp@latest"]
+    }
+  }
+}
