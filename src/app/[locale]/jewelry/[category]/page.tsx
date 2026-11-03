@@ -12,6 +12,9 @@ type CategoryPageProps = PageProps<"/[locale]/jewelry/[category]">;
 
 export const generateStaticParams = () => CATEGORIES.map((category) => ({ category }));
 
+/* Every real category is prerendered; only unknown ones render on request (and 404), so this page needs no shared instant shell */
+export const instant = false;
+
 const categoryFrom = async (params: CategoryPageProps["params"]) => {
   const { category } = await params;
   if (!isCategory(category)) notFound();

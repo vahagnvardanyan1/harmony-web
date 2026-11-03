@@ -17,7 +17,7 @@ export const ListingBanner = ({ eyebrow, title, lead, banner, crumbs, current }:
   return (
     <section aria-labelledby="listing-title" className="band relative grid min-h-[clamp(320px,46svh,480px)] grid-rows-[auto_1fr] overflow-hidden text-ivory md:h-[clamp(440px,58svh,600px)] md:min-h-0 md:grid-cols-[55%_45%]">
       <div className={`absolute inset-0 overflow-hidden ${frame}`}>
-        <Image src={banner.src} alt="" fill preload sizes="(max-width: 768px) 100vw, 45vw" className="object-cover" style={{ objectPosition: banner.focus }} />
+        <Image src={banner.src} alt="" fill loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 45vw" className="object-cover" style={{ objectPosition: banner.focus }} />
       </div>
       <div className="absolute inset-0 z-1 bg-linear-to-r from-[rgb(20_19_19/.72)] to-[rgb(20_19_19/.1)] md:hidden" />
       <div className="wrap relative z-2 md:col-start-1 md:mx-0 md:w-auto md:pl-[max(var(--gutter),calc((100vw-var(--max-content))/2))] md:pr-(--gutter)">

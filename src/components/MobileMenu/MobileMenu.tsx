@@ -32,7 +32,7 @@ export const MobileMenu = ({ items, extra }: MobileMenuProps) => {
         className="band fixed inset-y-0 left-0 m-0 h-full max-h-none w-[min(460px,100%)] max-w-none border-r border-gold-line p-0 open:animate-slide-in-left"
       >
         <div className="flex min-h-19 items-center justify-between border-b border-gold-line pl-8 pr-4">
-          <Image src="/brand/harmony-stacked-gold.svg" alt="harmony gold jewelry" width={105} height={40} className="h-10 w-auto" />
+          <Image src="/brand/harmony-stacked-gold.svg" alt="harmony gold jewelry" width={105} height={40} loading="eager" className="h-10 w-auto" />
           <button type="button" aria-label={t("close")} onClick={() => dialogRef.current?.close()} className="grid size-11 place-items-center rounded-full">
             <Icon name="close" />
           </button>

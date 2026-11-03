@@ -18,7 +18,7 @@ export const Footer = async () => {
       <div className="wrap">
         <div className="grid grid-cols-2 gap-12 border-t border-gold-faint pt-18 md:grid-cols-[2fr_1fr_1.2fr]">
           <div className="col-span-full justify-self-center md:col-span-1 md:justify-self-start">
-            <Image src="/brand/harmony-stacked-gold.svg" alt="harmony gold jewelry" width={240} height={92} className="w-60" />
+            <Image src="/brand/harmony-stacked-gold.svg" alt="harmony gold jewelry" width={240} height={92} loading="eager" className="w-60" />
           </div>
           <div>
             <h2 className={HEADING}>{t("chrome.jewelry")}</h2>
