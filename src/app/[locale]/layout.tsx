@@ -24,9 +24,13 @@ export const viewport: Viewport = { themeColor: "#1e1d1d" };
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("meta");
+  const shareImage = { url: "/brand/og-image.png", width: 1200, height: 630, alt: "harmony gold jewelry" };
+
   return {
     title: { default: t("title"), template: "%s · harmony" },
     description: t("description"),
+    openGraph: { type: "website", siteName: "harmony", title: t("title"), description: t("description"), images: [shareImage] },
+    twitter: { card: "summary_large_image", title: t("title"), description: t("description"), images: [shareImage] },
   };
 }
 

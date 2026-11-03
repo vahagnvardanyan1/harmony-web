@@ -40,7 +40,7 @@ src/lib/catalog/           # Products, categories, banners and photo helpers (st
 src/lib/opening-hours.ts   # Open / closed in Yerevan time
 src/constants/contact.ts   # Phone, WhatsApp, Instagram, directions
 src/proxy.ts               # next-intl middleware (locale detection and prefixes)
-public/brand/              # Logos (SVG)
+public/brand/              # Logos (SVG) and og-image.png, the share image set in the [locale] layout metadata
 public/images/<category>/  # Product photos: <product-id>-<n>.jpg, 1 = studio shot, 2+ = styled
 public/images/sets/        # Group shots of whole sets
 public/video/              # Home hero films and their posters
