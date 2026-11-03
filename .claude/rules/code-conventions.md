@@ -39,7 +39,6 @@ export type Status = (typeof Status)[keyof typeof Status];
 ```
 src/components/UserCard/
   UserCard.tsx       # UI only — props type + markup
-  UserCard.test.tsx  # when it has behavior worth testing
 ```
 
 Import from the file directly (`@/components/UserCard/UserCard`); no internal

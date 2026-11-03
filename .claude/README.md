@@ -10,7 +10,7 @@ Everything here is committed and shared, except `settings.local.json`.
 | `hooks/safety-check.sh`        | PreToolUse: blocks force-push to main, `reset --hard`, `npm i`, `git add -A`, publish |
 | `hooks/lint-edited-file.sh`    | PostToolUse: ESLints every edited JS/TS file, feeds errors back |
 | `rules/*.md`                   | Always-loaded rules (`code-conventions` only for `src/**`)    |
-| `skills/validate-and-commit/`  | `/validate-and-commit` — lint, typecheck, test, build, commit  |
+| `skills/validate-and-commit/`  | `/validate-and-commit` — lint, typecheck, build, commit         |
 | `../.mcp.json`                 | MCP servers: `next-devtools` (Next.js docs, dev-server errors, routes) and `react` (`@picsart/react-mcp` — team React guidelines; needs the `@picsart` GitLab registry in `~/.npmrc`) |
 
 ## Adding things

@@ -19,7 +19,6 @@
       "Bash(pnpm lint:fix *)",
       "Bash(pnpm typecheck *)",
       "Bash(pnpm build *)",
-      "Bash(pnpm test *)",
       "Bash(pnpm view *)",
       "Bash(pnpm list *)",
       "Bash(npm view *)",

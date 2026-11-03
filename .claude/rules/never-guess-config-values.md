@@ -1,6 +1,6 @@
 # Never guess hosts, ids or config values
 
-Look a value up at its source before writing it into code, config, tests or CI —
+Look a value up at its source before writing it into code, config or CI —
 never infer it from a similar-looking one.
 
 - Package versions and Node engine ranges: `pnpm view <pkg> version engines`.

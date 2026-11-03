@@ -1,26 +1,158 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Brand palette, type and motion tokens — every utility below reads from these */
+@theme {
+  --color-charcoal: #1e1d1d;
+  --color-charcoal-2: #252323;
+  --color-charcoal-3: #2f2c2b;
+  --color-gold: #d9b583;
+  --color-ivory: #f7f1e6;
+  --color-ivory-2: #efe6d6;
+  --color-ivory-3: #e7dcc8;
+  /* Deep gold darkened so small text on ivory clears 4.5:1 */
+  --color-deepgold: #6f552d;
+  --color-on-dark-muted: rgb(247 241 230 / 0.7);
+  --color-gold-line: rgb(217 181 131 / 0.3);
+  --color-gold-faint: rgb(217 181 131 / 0.14);
+  --color-open: #3f6b3a;
+  --color-closed: #8a3b2b;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.21, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --radius-arch: 999px 999px 0 0;
+
+  --animate-rise: rise 1.2s var(--ease-out-expo) both;
+  --animate-cue: cue 2.4s var(--ease-soft) infinite;
+  --animate-fade-in: fade-in 0.4s var(--ease-out-expo);
+  --animate-slide-in-left: slide-in-left 0.5s var(--ease-out-expo);
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+  }
+  @keyframes cue {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100%); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+  }
+  @keyframes slide-in-left {
+    from { transform: translateX(-100%); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Fonts come from next/font in the root layout; Armenian falls back to the Noto faces */
+@theme inline {
+  --font-sans: var(--font-raleway), var(--font-noto-sans-armenian), system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), var(--font-noto-serif-armenian), Georgia, serif;
+
+  /* Surface-relative colours: a band sets them, its children read them */
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
+  --color-line-faint: var(--line-faint);
+  --color-tile: var(--tile);
+}
+
+/* Every section is a band; dark is the default palette, light and light-2 swap it */
+@utility band {
+  --bg: var(--color-charcoal);
+  --fg: var(--color-ivory);
+  --muted: var(--color-on-dark-muted);
+  --accent: var(--color-gold);
+  --line: var(--color-gold-line);
+  --line-faint: var(--color-gold-faint);
+  --tile: var(--color-charcoal-3);
+  background-color: var(--bg);
+  color: var(--fg);
+  color-scheme: dark;
+}
+
+@utility band-light {
+  --bg: var(--color-ivory);
+  --fg: var(--color-charcoal);
+  --muted: #5d554b;
+  --accent: var(--color-deepgold);
+  --line: rgb(111 85 45 / 0.28);
+  --line-faint: rgb(111 85 45 / 0.13);
+  --tile: var(--color-ivory-2);
+  background-color: var(--bg);
+  color: var(--fg);
+  color-scheme: light;
+}
+
+@utility band-light-2 {
+  @apply band-light;
+  --bg: var(--color-ivory-2);
+  --tile: var(--color-ivory-3);
+}
+
+/* Page-width content column with the fluid side gutter */
+@utility wrap {
+  width: min(100% - 2 * var(--gutter), var(--max-content));
+  margin-inline: auto;
+}
+
+/* Fades content up as it scrolls into view — CSS only, skipped where unsupported or unwanted */
+@utility reveal {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+@custom-variant hy (&:lang(hy));
+@custom-variant ru (&:lang(ru));
+
+@layer base {
+  :root {
+    @apply band-light;
+    --gutter: clamp(20px, 4vw, 64px);
+    --max-content: 1440px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ivory text-charcoal font-sans text-[15px] leading-[1.65] antialiased;
+    font-feature-settings: "lnum" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-gold text-charcoal;
+  }
+
+  :focus-visible {
+    outline: 1.5px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  dialog::backdrop {
+    background: rgb(15 14 14 / 0.55);
+    backdrop-filter: blur(4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0s !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }

@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "harmony · Gold Jewelry · Yerevan",
+    "description": "harmony gold jewelry — rings, earrings, bangles and pendants. Tashir Trade Center, Yerevan."
+  },
+  "chrome": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language",
+    "mainNav": "Main",
+    "jewelry": "Jewelry",
+    "footerBoutique": "The boutique",
+    "copyright": "© 2026 harmony gold jewelry · Yerevan"
+  },
+  "categories": {
+    "rings": {
+      "title": "Rings",
+      "lead": "From quiet bands to stones that catch every light."
+    },
+    "earrings": {
+      "title": "Earrings",
+      "lead": "Hoops, drops and studs to frame the face."
+    },
+    "bangles": {
+      "title": "Bangles",
+      "lead": "Bangles to wear alone or stacked together."
+    },
+    "pendants": {
+      "title": "Pendants",
+      "lead": "A single drop of gold at the neckline."
+    },
+    "sets": {
+      "title": "Sets",
+      "lead": "Matching pieces, made to be worn together."
+    }
+  },
+  "contact": {
+    "addressLines": [
+      "Tashir Trade Center, corner 243",
+      "33 Movses Khorenatsi St, Yerevan"
+    ],
+    "hours": "Monday – Sunday, 10:00 – 20:00",
+    "openNow": "Open now · until 20:00",
+    "closedNow": "Closed now · opens at 10:00",
+    "addressLabel": "Address",
+    "hoursLabel": "Opening hours",
+    "phoneLabel": "Phone",
+    "directions": "Directions"
+  },
+  "gallery": {
+    "previous": "Previous",
+    "next": "Next",
+    "isNew": "New"
+  },
+  "home": {
+    "heroEyebrow": "Gold jewelry · Yerevan",
+    "heroTitle": "g<logo></logo>ld that grows with you",
+    "heroCta": "Discover the jewelry",
+    "pauseFilm": "Pause film",
+    "playFilm": "Play film",
+    "newEyebrow": "Just arrived",
+    "newTitle": "new in",
+    "seeAllJewelry": "See all jewelry",
+    "typesEyebrow": "Our creations",
+    "typesTitle": "shop by type",
+    "seeAll": "See all",
+    "visitEyebrow": "Come and see",
+    "visitTitle": "the boutique"
+  },
+  "jewelry": {
+    "title": "all jewelry",
+    "lead": "Rings, earrings, bangles and pendants in yellow, rose and white gold."
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "this piece has wandered off",
+    "lead": "The page you were looking for isn't here — it may have moved, or the link may be mistyped.",
+    "home": "Back to the home page"
+  }
+}
