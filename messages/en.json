@@ -54,7 +54,7 @@
     "isNew": "New"
   },
   "home": {
-    "heroEyebrow": "G<logo></logo>ld jewelry · Yerevan",
+    "heroEyebrow": "G<logo></logo>ld jewelry<sep></sep>Yerevan",
     "heroCta": "Discover the jewelry",
     "pauseFilm": "Pause film",
     "playFilm": "Play film",
