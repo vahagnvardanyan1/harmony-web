@@ -23,16 +23,11 @@
   --radius-arch: 999px 999px 0 0;
 
   --animate-rise: rise 1.2s var(--ease-out-expo) both;
-  --animate-cue: cue 2.4s var(--ease-soft) infinite;
   --animate-fade-in: fade-in 0.4s var(--ease-out-expo);
   --animate-slide-in-left: slide-in-left 0.5s var(--ease-out-expo);
 
   @keyframes rise {
     from { opacity: 0; transform: translateY(24px); }
-  }
-  @keyframes cue {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(100%); }
   }
   @keyframes fade-in {
     from { opacity: 0; }

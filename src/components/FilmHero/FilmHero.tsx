@@ -55,7 +55,6 @@ export const FilmHero = ({ children }: FilmHeroProps) => {
       >
         <Icon name={paused ? "play" : "pause"} />
       </button>
-      <span aria-hidden="true" className="absolute bottom-0 left-1/2 z-20 h-14 w-px overflow-hidden bg-ivory/25 after:absolute after:inset-0 after:animate-cue after:bg-gold" />
     </section>
   );
 };
