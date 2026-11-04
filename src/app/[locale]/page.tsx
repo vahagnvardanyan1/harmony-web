@@ -27,13 +27,6 @@ export default async function HomePage() {
           <Title as="h1" size="xl" id="hero-title">
             {t.rich("home.heroEyebrow", {
               logo: () => <Image src="/brand/harmony-icon-gold.svg" alt="o" width={70} height={70} className="inline-block size-[.7em] align-[-.02em]" />,
-              /* "·" on one line on wide screens; phones break the line there instead of leaving the dot hanging */
-              sep: () => (
-                <>
-                  <span className="max-md:hidden"> · </span>
-                  <br className="md:hidden" />
-                </>
-              ),
             })}
           </Title>
         </div>
