@@ -110,6 +110,8 @@
     @apply band-light;
     --gutter: clamp(20px, 4vw, 64px);
     --max-content: 1440px;
+    /* Shows only outside the page — over-scroll and under mobile toolbars — so it matches the dark header and footer */
+    background-color: var(--color-charcoal);
   }
 
   html {

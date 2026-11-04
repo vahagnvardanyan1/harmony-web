@@ -27,13 +27,21 @@ export const Header = async () => {
           <div className="flex items-center gap-1.5">
             <MobileMenu
               items={navItems}
-              extra={
+              footer={
                 <>
-                  <LanguageSwitcher />
-                  <div className="flex gap-3">
-                    <IconLink href={PHONE_HREF} label={PHONE_DISPLAY} icon="phone" variant="outlined" className="text-ivory" />
-                    <IconLink href={WHATSAPP_URL} label="WhatsApp" icon="whatsapp" variant="outlined" className="text-ivory" />
-                    <IconLink href={INSTAGRAM_URL} label="Instagram" icon="instagram" variant="outlined" className="text-ivory" />
+                  <p className="text-[10px] font-semibold uppercase tracking-[.28em] text-gold">{t("chrome.footerBoutique")}</p>
+                  <p className="mt-3 text-[13px] leading-relaxed text-on-dark-muted">
+                    {t.raw("contact.addressLines")[0]}
+                    <br />
+                    {t("contact.hours")}
+                  </p>
+                  <div className="mt-6 flex items-center justify-between gap-4">
+                    <LanguageSwitcher />
+                    <div className="flex gap-2">
+                      <IconLink href={PHONE_HREF} label={PHONE_DISPLAY} icon="phone" variant="outlined" className="text-ivory" />
+                      <IconLink href={WHATSAPP_URL} label="WhatsApp" icon="whatsapp" variant="outlined" className="text-ivory" />
+                      <IconLink href={INSTAGRAM_URL} label="Instagram" icon="instagram" variant="outlined" className="text-ivory" />
+                    </div>
                   </div>
                 </>
               }
