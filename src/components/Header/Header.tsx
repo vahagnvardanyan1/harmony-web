@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
+import { GoldPriceBar } from "@/components/GoldPriceBar/GoldPriceBar";
 import { IconLink } from "@/components/IconLink/IconLink";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher";
 import { MobileMenu } from "@/components/MobileMenu/MobileMenu";
@@ -23,6 +24,7 @@ export const Header = async () => {
         {t("chrome.skip")}
       </a>
       <HeaderShell>
+        <GoldPriceBar />
         <div className="wrap grid h-17 grid-cols-[1fr_auto_1fr] items-center lg:h-19">
           <div className="flex items-center gap-1.5">
             <MobileMenu

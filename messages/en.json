@@ -76,5 +76,9 @@
     "title": "this piece has wandered off",
     "lead": "The page you were looking for isn't here — it may have moved, or the link may be mistyped.",
     "home": "Back to the home page"
+  },
+  "goldPrice": {
+    "label": "Gold market price",
+    "unit": "֏/g"
   }
 }

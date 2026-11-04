@@ -38,6 +38,7 @@ src/hooks/                 # Client hooks (use* prefix)
 src/i18n/                  # next-intl: routing, request config, navigation, typed AppConfig
 src/lib/catalog/           # Products, categories, banners and photo helpers (static data)
 src/lib/opening-hours.ts   # Open / closed in Yerevan time
+src/lib/gold-price.ts      # Market gold price per gram (gold-api.com × Central Bank of Armenia USD rate), cached hourly
 src/constants/contact.ts   # Phone, WhatsApp, Instagram, directions
 src/proxy.ts               # next-intl middleware (locale detection and prefixes)
 public/brand/              # Logos (SVG) and og-image.png, the share image set in the [locale] layout metadata
