@@ -20,8 +20,10 @@ export const Lightbox = ({ content: { label, photos }, onClose }: LightboxProps)
   const [current, setCurrent] = useState(0);
   const total = photos.length;
 
+  /* showModal would focus the first control and draw its focus ring; focusing the dialog itself avoids that */
   useEffect(() => {
     dialogRef.current?.showModal();
+    dialogRef.current?.focus();
   }, []);
 
   const track = () => {
@@ -44,11 +46,12 @@ export const Lightbox = ({ content: { label, photos }, onClose }: LightboxProps)
   return (
     <dialog
       ref={dialogRef}
+      tabIndex={-1}
       aria-label={label}
       onClose={onClose}
       onKeyDown={onKeyDown}
       onClick={onBackdropClick}
-      className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none animate-fade-in overflow-hidden bg-[rgb(20_19_19/.97)] p-0 text-ivory backdrop:bg-[rgb(20_19_19/.97)]"
+      className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none animate-fade-in overflow-hidden outline-none bg-[rgb(20_19_19/.97)] p-0 text-ivory backdrop:bg-[rgb(20_19_19/.97)]"
     >
       <div
         ref={trackRef}
@@ -56,16 +59,18 @@ export const Lightbox = ({ content: { label, photos }, onClose }: LightboxProps)
         className="grid h-full snap-x snap-mandatory auto-cols-[100%] grid-flow-col overflow-x-auto scroll-smooth [scrollbar-width:none] motion-reduce:scroll-auto"
       >
         {photos.map((src, index) => (
-          <figure key={src} data-slide className="m-0 grid cursor-zoom-out snap-center place-items-center px-[clamp(16px,9vw,140px)] py-[clamp(64px,9vh,96px)]">
-            <Image
-              src={src}
-              alt={`${label} — ${index + 1}/${total}`}
-              width={1000}
-              height={1333}
-              sizes="(max-width: 700px) 100vw, 75vh"
-              loading={index < 2 ? "eager" : "lazy"}
-              className="h-auto max-h-[calc(100svh-2*clamp(64px,9vh,96px))] w-auto max-w-full cursor-default object-contain"
-            />
+          /* The photo takes all the room between the controls: full width on phones, between the arrows on desktop */
+          <figure key={src} data-slide className="m-0 flex cursor-zoom-out snap-center px-[clamp(88px,9vw,140px)] py-20 max-[700px]:px-0 max-[700px]:pb-16 max-[700px]:pt-22">
+            <div className="relative size-full cursor-default">
+              <Image
+                src={src}
+                alt={`${label} — ${index + 1}/${total}`}
+                fill
+                sizes="(max-width: 700px) 100vw, 70vw"
+                loading={index < 2 ? "eager" : "lazy"}
+                className="object-contain"
+              />
+            </div>
           </figure>
         ))}
       </div>
