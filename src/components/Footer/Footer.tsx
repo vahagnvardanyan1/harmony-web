@@ -16,8 +16,9 @@ export const Footer = async () => {
   return (
     <footer className="band pb-9">
       <div className="wrap">
-        <div className="grid grid-cols-2 gap-12 border-t border-gold-faint pt-18 md:grid-cols-[2fr_1fr_1.2fr]">
-          <div className="col-span-full justify-self-center md:col-span-1 md:justify-self-start">
+        {/* The boutique column is sized to its longest line so the address and hours never wrap */}
+        <div className="grid grid-cols-1 gap-12 border-t border-gold-faint pt-18 md:grid-cols-2 lg:grid-cols-[2fr_1fr_auto]">
+          <div className="col-span-full justify-self-center lg:col-span-1 lg:justify-self-start">
             <Image src="/brand/harmony-stacked-gold.svg" alt="harmony gold jewelry" width={240} height={92} loading="eager" className="w-60" />
           </div>
           <div>
@@ -34,7 +35,7 @@ export const Footer = async () => {
           </div>
           <div>
             <h2 className={HEADING}>{t("chrome.footerBoutique")}</h2>
-            <address className={BODY}>
+            <address className={`${BODY} whitespace-nowrap`}>
               {t.raw("contact.addressLines").map((line: string) => (
                 <span key={line} className="block">
                   {line}
