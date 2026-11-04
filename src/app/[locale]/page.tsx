@@ -8,7 +8,7 @@ import { FilmHero } from "@/components/FilmHero/FilmHero";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
 import { Rail } from "@/components/Rail/Rail";
 import { SectionHead } from "@/components/SectionHead/SectionHead";
-import { Eyebrow, Title } from "@/components/Typography/Typography";
+import { Title } from "@/components/Typography/Typography";
 import { VisitSection } from "@/components/VisitSection/VisitSection";
 import { CATEGORY_BANNERS, categoryHref } from "@/lib/catalog/categories";
 import { cardPhotos, photosOf } from "@/lib/catalog/photos";
@@ -24,16 +24,13 @@ export default async function HomePage() {
     <>
       <FilmHero>
         <div className="animate-rise">
-          <Eyebrow>{t("home.heroEyebrow")}</Eyebrow>
-        </div>
-        <div className="animate-rise [animation-delay:150ms]">
           <Title as="h1" size="xl" id="hero-title">
-            {t.rich("home.heroTitle", {
+            {t.rich("home.heroEyebrow", {
               logo: () => <Image src="/brand/harmony-icon-gold.svg" alt="o" width={70} height={70} className="inline-block size-[.7em] align-[-.02em]" />,
             })}
           </Title>
         </div>
-        <div className="mt-10 animate-rise [animation-delay:300ms]">
+        <div className="mt-10 animate-rise [animation-delay:150ms]">
           <ButtonLink href="/jewelry" tone="gold">
             {t("home.heroCta")}
           </ButtonLink>
