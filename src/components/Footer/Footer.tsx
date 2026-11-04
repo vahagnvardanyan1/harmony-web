@@ -21,7 +21,7 @@ export const Footer = async () => {
           <div className="col-span-full justify-self-center lg:col-span-1 lg:justify-self-start">
             <Image src="/brand/harmony-stacked-gold.svg" alt="harmony gold jewelry" width={240} height={92} loading="eager" className="w-60" />
           </div>
-          <div>
+          <div className="text-center md:text-left">
             <h2 className={HEADING}>{t("chrome.jewelry")}</h2>
             <ul className="grid gap-0.5">
               {CATEGORIES.map((category) => (
@@ -33,7 +33,7 @@ export const Footer = async () => {
               ))}
             </ul>
           </div>
-          <div>
+          <div className="text-center md:text-left">
             <h2 className={HEADING}>{t("chrome.footerBoutique")}</h2>
             <address className={`${BODY} whitespace-nowrap`}>
               {t.raw("contact.addressLines").map((line: string) => (
@@ -46,7 +46,7 @@ export const Footer = async () => {
                 {PHONE_DISPLAY}
               </a>
             </address>
-            <div className="-ml-3 mt-4 flex gap-1 text-ivory">
+            <div className="mt-4 flex justify-center gap-1 text-ivory md:-ml-3 md:justify-start">
               <IconLink href={DIRECTIONS_URL} label={t("contact.directions")} icon="pin" />
               <IconLink href={WHATSAPP_URL} label="WhatsApp" icon="whatsapp" />
               <IconLink href={INSTAGRAM_URL} label="Instagram" icon="instagram" />
