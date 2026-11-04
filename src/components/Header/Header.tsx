@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 import { GoldPriceBar } from "@/components/GoldPriceBar/GoldPriceBar";
+import { Address } from "@/components/Address/Address";
 import { IconLink } from "@/components/IconLink/IconLink";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher";
 import { MobileMenu } from "@/components/MobileMenu/MobileMenu";
@@ -33,7 +34,7 @@ export const Header = async () => {
                 <>
                   <p className="text-[10px] font-semibold uppercase tracking-[.28em] text-gold">{t("chrome.footerBoutique")}</p>
                   <p className="mt-3 text-[13px] leading-relaxed text-on-dark-muted">
-                    {t.raw("contact.addressLines")[0]}
+                    <Address />
                     <br />
                     {t("contact.hours")}
                   </p>

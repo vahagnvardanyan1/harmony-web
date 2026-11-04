@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
+import { Address } from "@/components/Address/Address";
 import { IconLink } from "@/components/IconLink/IconLink";
 import { OpenStatus } from "@/components/OpenStatus/OpenStatus";
 import { Eyebrow, Title } from "@/components/Typography/Typography";
@@ -28,11 +29,7 @@ export const VisitSection = async () => {
           <div className={CELL}>
             <dt className={TERM}>{t("contact.addressLabel")}</dt>
             <dd className={DETAIL}>
-              {t.raw("contact.addressLines").map((line: string) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
+              <Address />
             </dd>
           </div>
           <div className={CELL}>

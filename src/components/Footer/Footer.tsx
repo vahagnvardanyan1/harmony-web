@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
+import { Address } from "@/components/Address/Address";
 import { IconLink } from "@/components/IconLink/IconLink";
 import { DIRECTIONS_URL, INSTAGRAM_URL, PHONE_DISPLAY, PHONE_HREF, WHATSAPP_URL } from "@/constants/contact";
 import { Link } from "@/i18n/navigation";
@@ -36,11 +37,9 @@ export const Footer = async () => {
           <div className="text-center md:text-left">
             <h2 className={HEADING}>{t("chrome.footerBoutique")}</h2>
             <address className={`${BODY} whitespace-nowrap`}>
-              {t.raw("contact.addressLines").map((line: string) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
+              <span className="block">
+                <Address />
+              </span>
               <span className="block">{t("contact.hours")}</span>
               <a href={PHONE_HREF} className="hover:text-ivory">
                 {PHONE_DISPLAY}
