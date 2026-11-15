@@ -16,6 +16,12 @@ const set = ({ photos, ...fields }: Omit<JewelrySet, "kind" | "category">): Jewe
 
 /* Catalog order is display order */
 export const PRODUCTS: readonly Product[] = [
+  set({ id: "butterfly-set", name: n("Diamond butterfly set", "«Թիթեռ» հավաքածու ադամանդներով", "Комплект «Бабочка» с бриллиантами"),
+    photos: ["rings/butterfly-ring-1", "earrings/butterfly-earrings-1"] }),
+  piece({ id: "butterfly-ring", category: "rings", photoCount: 1, isNew: true,
+    name: n("Diamond butterfly ring", "«Թիթեռ» մատանի ադամանդներով", "Кольцо «Бабочка» с бриллиантами") }),
+  piece({ id: "butterfly-earrings", category: "earrings", photoCount: 1, isNew: true,
+    name: n("Diamond butterfly earrings", "«Թիթեռ» ականջօղեր ադամանդներով", "Серьги «Бабочка» с бриллиантами") }),
   set({ id: "pearl-flower-set", name: n("Mother-of-pearl flower set", "«Ծաղիկ» հավաքածու սադափով", "Комплект «Цветок» с перламутром"),
     photos: ["rings/pearl-flower-ring-1", "earrings/pearl-flower-earrings-1", "rings/pearl-flower-ring-2"] }),
   piece({ id: "pearl-flower-ring", category: "rings", photoCount: 2, isNew: true,
@@ -93,4 +99,4 @@ export const PRODUCTS: readonly Product[] = [
 ];
 
 /* Hand-picked for the home "new in" rail */
-export const NEW_IN_IDS = ["pearl-flower-ring", "pearl-flower-earrings", "link-bangle", "flower-bangle", "teardrop-necklace", "tricolor-ring", "topaz-ring", "smoky-drop-earrings", "crossover-ring"] as const;
+export const NEW_IN_IDS = ["butterfly-ring", "butterfly-earrings", "pearl-flower-ring", "pearl-flower-earrings", "link-bangle", "flower-bangle", "teardrop-necklace", "tricolor-ring", "topaz-ring", "smoky-drop-earrings", "crossover-ring"] as const;
