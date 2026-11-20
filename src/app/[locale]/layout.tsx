@@ -9,7 +9,7 @@ import { Footer } from "@/components/Footer/Footer";
 import { GalleryProvider } from "@/components/Gallery/GalleryProvider";
 import { Header } from "@/components/Header/Header";
 import { JsonLd } from "@/components/JsonLd/JsonLd";
-import { SITE_URL } from "@/constants/site";
+import { GOOGLE_SITE_VERIFICATION, SITE_URL } from "@/constants/site";
 import { routing } from "@/i18n/routing";
 import { SHARE_IMAGE } from "@/lib/seo/page-metadata";
 import { storeJsonLd } from "@/lib/seo/store-json-ld";
@@ -32,6 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(SITE_URL),
+    verification: { google: GOOGLE_SITE_VERIFICATION },
     title: { default: t("title"), template: "%s · harmony" },
     description: t("description"),
     openGraph: { type: "website", siteName: "harmony", title: t("title"), description: t("description"), images: [SHARE_IMAGE] },
