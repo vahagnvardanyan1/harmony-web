@@ -11,6 +11,9 @@ Everything here is committed and shared, except `settings.local.json`.
 | `hooks/lint-edited-file.sh`    | PostToolUse: ESLints every edited JS/TS file, feeds errors back |
 | `rules/*.md`                   | Always-loaded rules (`code-conventions` only for `src/**`)    |
 | `skills/validate-and-commit/`  | `/validate-and-commit` — lint, typecheck, build, commit         |
+| `agents/seo-specialist.md`     | SEO agent: technical, local and multilingual SEO; preloads `seo-nextjs` and `seo-local-business` |
+| `skills/seo-*/`                | SEO knowledge (`seo-nextjs`, `seo-local-business`) and tasks run in the agent: `/seo-setup` (analyze, fix, verify), `/seo-keyword-research`, `/seo-competitor-research`, `/seo-check [live]` |
+| `agent-memory/seo-specialist/` | The SEO agent's committed memory: decisions, keyword map, competitors, audits |
 | `../.mcp.json`                 | MCP servers: `next-devtools` (Next.js docs, dev-server errors, routes) and `react` (`@picsart/react-mcp` — team React guidelines; needs the `@picsart` GitLab registry in `~/.npmrc`) |
 
 ## Adding things
