@@ -46,9 +46,13 @@ The 404 page gets `robots: { index: false }` and no canonical.
 
 ## sitemap.ts and robots.ts
 
-- `src/app/sitemap.ts`: every route × every locale, each entry with
-  `alternates.languages` for its siblings. Routes come from `CATEGORIES`, never a
-  hand-typed list. **No `images` entries** (decided 2026-11-20): pages show photos
+- `src/app/sitemap.ts`: every route × every locale as a plain `{ url }`. Routes
+  come from `CATEGORIES`, never a hand-typed list. **No `alternates`**: hreflang is
+  already in each page's `<head>` and the `Link` header, and Google says the three
+  methods are equivalent with "no benefit" in using several (sitemap alternates also
+  make Chrome show the file as plain text). **No `changeFrequency` / `priority`**
+  (Google ignores them) and **no `lastModified`** unless it is a real content date —
+  never `new Date()`. **No `images` entries** (decided 2026-11-20): pages show photos
   via `/_next/image`, so original-file URLs would give each photo a second URL
   (Google: "consistently reference the image with the same URL"), and pop-up
   photos have no landing page of their own. Revisit only with per-product pages.

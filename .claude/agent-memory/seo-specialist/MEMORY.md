@@ -22,6 +22,10 @@ Index — keep under 200 lines. Detail goes in topic files, linked here.
   open only in the JS pop-up with no landing page (Mueller 2018: Google Images needs the
   image *and* an indexed landing page). Revisit only if per-product pages are added.
 
+- 2026-11-20 — Sitemap entries are plain `{ url }`: no hreflang alternates (HTML + Link
+  header already declare them; Google: "no benefit" in using more than one method) and no
+  lastmod/changefreq/priority (Google ignores the latter two; no accurate dates for lastmod).
+
 ## Status — local build, 2026-11-20 (after seo-setup, NOT yet deployed)
 
 - All 21 pages × every seo-check row pass; robots.txt 200, sitemap 21 URLs (image entries removed later the same day, see Decisions).
