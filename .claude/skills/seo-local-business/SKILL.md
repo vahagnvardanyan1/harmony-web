@@ -28,7 +28,14 @@ founding date, legal name. Never estimate them.
 Render as a native `<script type="application/ld+json">` in a server component,
 escaping `<` (`JSON.stringify(data).replace(/</g, "\\u003c")`) — see
 `node_modules/next/dist/docs/01-app/02-guides/json-ld.md`. Build the objects in
-`src/lib/seo/`, not in components. Text is in the page's locale.
+`src/lib/seo/`, not in components, and render them with `src/components/JsonLd/JsonLd.tsx`.
+Text is in the page's locale.
+
+Type every builder with **`schema-dts`** (dev dependency, types only):
+`(): WithContext<JewelryStore> => ({ … })`. Enum-like values use its types
+(`DayOfWeek[]`, not `string[]`) — a typo then fails `pnpm typecheck` instead of
+silently dropping the rich result. Never cast (`as`) to get past a schema-dts error;
+fix the data.
 
 | Page                    | Types                                                                 |
 | ----------------------- | --------------------------------------------------------------------- |

@@ -49,7 +49,7 @@ Rules are in `seo-nextjs` and `seo-local-business`. Per page:
 | jsonLd           | layout: `JewelryStore`; listings: `BreadcrumbList`; no INVALID    |
 | imagesWithoutAlt | 0 (product photos need names; empty alt only for decoration)       |
 | robots.txt       | 200, lists the sitemap                                            |
-| sitemap.xml      | 200, 3 × (routes − 404) URLs                                      |
+| sitemap.xml      | 200, 3 × (routes − 404) URLs, no `<image:image>` entries          |
 
 ## 4. Report and clean up
 

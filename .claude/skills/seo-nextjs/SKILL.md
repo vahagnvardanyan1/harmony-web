@@ -48,7 +48,10 @@ The 404 page gets `robots: { index: false }` and no canonical.
 
 - `src/app/sitemap.ts`: every route × every locale, each entry with
   `alternates.languages` for its siblings. Routes come from `CATEGORIES`, never a
-  hand-typed list. Add `images` with absolute photo URLs on listing pages.
+  hand-typed list. **No `images` entries** (decided 2026-11-20): pages show photos
+  via `/_next/image`, so original-file URLs would give each photo a second URL
+  (Google: "consistently reference the image with the same URL"), and pop-up
+  photos have no landing page of their own. Revisit only with per-product pages.
 - `src/app/robots.ts`: allow all, `sitemap: \`${SITE_URL}/sitemap.xml\``.
 - Both sit outside `[locale]`, so they have no locale root param.
 

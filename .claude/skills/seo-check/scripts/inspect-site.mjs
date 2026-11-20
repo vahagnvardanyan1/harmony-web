@@ -15,7 +15,8 @@ const categories = [...categoryList.matchAll(/"([^"]+)"/g)].map(([, name]) => na
 const LOCALE_PREFIXES = ["", "/hy", "/ru"];
 const ROUTES = ["/", "/jewelry", ...categories.map((category) => `/jewelry/${category}`), "/no-such-page"];
 
-const attributes = (tag) => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, key, value]) => [key, value]));
+// HTML attribute names are case-insensitive and React writes some in camelCase (hrefLang), so compare them lower-cased
+const attributes = (tag) => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, key, value]) => [key.toLowerCase(), value]));
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, "g"))].map(([tag]) => attributes(tag));
 const decode = (text) => text.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 

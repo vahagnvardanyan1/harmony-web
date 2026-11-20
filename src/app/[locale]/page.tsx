@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -14,8 +15,17 @@ import { CATEGORY_BANNERS, categoryHref } from "@/lib/catalog/categories";
 import { cardPhotos, photosOf } from "@/lib/catalog/photos";
 import { newInProducts, productsIn } from "@/lib/catalog/queries";
 import { CATEGORIES } from "@/lib/catalog/types";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 
 const SECTION_SPACING = "py-[clamp(80px,11vw,160px)]";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const [locale, t] = await Promise.all([getLocale(), getTranslations("meta")]);
+  const title = t("title");
+
+  /* The home title already leads with the brand, so it skips the " · harmony" template */
+  return { ...pageMetadata({ path: "/", locale, title, description: t("description") }), title: { absolute: title } };
+}
 
 export default async function HomePage() {
   const [locale, t] = await Promise.all([getLocale(), getTranslations()]);

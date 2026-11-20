@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 
+import { JsonLd } from "@/components/JsonLd/JsonLd";
 import { ListingBanner } from "@/components/ListingBanner/ListingBanner";
 import { ProductGrid } from "@/components/ProductGrid/ProductGrid";
-import { CATEGORY_BANNERS, isCategory } from "@/lib/catalog/categories";
+import { CATEGORY_BANNERS, categoryHref, isCategory } from "@/lib/catalog/categories";
 import { productsIn } from "@/lib/catalog/queries";
 import { CATEGORIES } from "@/lib/catalog/types";
+import { breadcrumbJsonLd, productListJsonLd } from "@/lib/seo/listing-json-ld";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 
 type CategoryPageProps = PageProps<"/[locale]/jewelry/[category]">;
 
@@ -22,28 +25,33 @@ const categoryFrom = async (params: CategoryPageProps["params"]) => {
 };
 
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
-  const [category, t] = await Promise.all([categoryFrom(params), getTranslations("categories")]);
-  return { title: t(`${category}.title`), description: t(`${category}.lead`) };
+  const [category, locale, t] = await Promise.all([categoryFrom(params), getLocale(), getTranslations("meta.categories")]);
+  return pageMetadata({ path: categoryHref(category), locale, title: t(`${category}.title`), description: t(`${category}.description`) });
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const [category, locale, t] = await Promise.all([categoryFrom(params), getLocale(), getTranslations()]);
   const title = t(`categories.${category}.title`);
+  const products = productsIn(category);
+  const crumbs = [
+    { href: "/", label: "harmony" },
+    { href: "/jewelry", label: t("chrome.jewelry") },
+  ];
 
   return (
     <>
+      <JsonLd
+        data={[breadcrumbJsonLd({ locale, crumbs: [...crumbs, { href: categoryHref(category), label: title }] }), productListJsonLd({ locale, name: title, products })]}
+      />
       <ListingBanner
         eyebrow={t("chrome.jewelry")}
         title={title.toLowerCase()}
         lead={t("jewelry.lead")}
         banner={CATEGORY_BANNERS[category]}
-        crumbs={[
-          { href: "/", label: "harmony" },
-          { href: "/jewelry", label: t("chrome.jewelry") },
-        ]}
+        crumbs={crumbs}
         current={title}
       />
-      <ProductGrid products={productsIn(category)} locale={locale} />
+      <ProductGrid products={products} locale={locale} />
     </>
   );
 }

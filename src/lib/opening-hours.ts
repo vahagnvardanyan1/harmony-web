@@ -1,5 +1,5 @@
-const OPENS_AT_MINUTE = 10 * 60;
-const CLOSES_AT_MINUTE = 20 * 60;
+export const OPENS_AT_MINUTE = 10 * 60;
+export const CLOSES_AT_MINUTE = 20 * 60;
 
 const yerevanClock = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Yerevan", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 

@@ -1,7 +1,33 @@
 {
   "meta": {
     "title": "Harmony Gold Jewelry · Gold jewelry in Yerevan",
-    "description": "harmony gold jewelry — rings, earrings, bangles and pendants. Tashir Trade Center, Yerevan."
+    "description": "harmony is a gold jewelry boutique at Tashir Trade Center, Yerevan: rings, earrings, bangles, pendants and matching sets in yellow, rose and white gold.",
+    "jewelry": {
+      "title": "Gold Jewelry Collection in Yerevan",
+      "description": "Every piece at harmony in one place: gold rings, earrings, bangles, pendants and sets with diamonds, topaz and smoky quartz. Tashir Trade Center, Yerevan."
+    },
+    "categories": {
+      "rings": {
+        "title": "Gold Rings in Yerevan",
+        "description": "Gold rings at harmony in Yerevan, set with diamonds, London blue topaz, smoky quartz or mother-of-pearl, in yellow, rose and white gold. Tashir Trade Center."
+      },
+      "earrings": {
+        "title": "Gold Earrings in Yerevan",
+        "description": "Gold hoops and drop earrings at harmony in Yerevan, with diamonds, London blue topaz, smoky quartz or mother-of-pearl. See them at Tashir Trade Center."
+      },
+      "bangles": {
+        "title": "Gold Bangles & Bracelets in Yerevan",
+        "description": "Gold bangles at harmony in Yerevan: twisted, crossover, beaded and link designs, many set with diamonds, to wear alone or stacked. Tashir Trade Center."
+      },
+      "pendants": {
+        "title": "Gold Pendants in Yerevan",
+        "description": "Gold pendants at harmony in Yerevan: a single drop of gold at the neckline, to wear alone or with matching earrings. See them at Tashir Trade Center."
+      },
+      "sets": {
+        "title": "Gold Jewelry Sets in Yerevan",
+        "description": "Matching gold sets at harmony in Yerevan, made to be worn together, with diamonds, London blue topaz, smoky quartz or mother-of-pearl. Tashir Trade Center."
+      }
+    }
   },
   "chrome": {
     "skip": "Skip to content",

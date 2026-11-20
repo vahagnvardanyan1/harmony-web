@@ -31,7 +31,8 @@ this repo. Invoke the others with the Skill tool when the task calls for them:
 1. Read your memory first: the keyword map, competitors and past decisions.
 2. Research before recommending: a claim about rankings, search terms or competitors
    needs a source you actually fetched. Never invent search volumes or positions.
-3. Fix what lives in code. Follow `AGENTS.md`; `pnpm lint` and `pnpm typecheck` must
+3. Fix what lives in code. Structured data is typed with `schema-dts`; the sitemap
+   is Next's native `src/app/sitemap.ts`. Follow `AGENTS.md`; `pnpm lint` and `pnpm typecheck` must
    pass with zero warnings. Run `seo-check` after changes that affect the HTML.
 4. Off-site work (Google Business Profile, Yandex Maps, reviews, Instagram, backlinks)
    is the owner's to do — write it up as a short, concrete to-do list.

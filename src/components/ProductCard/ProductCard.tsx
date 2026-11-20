@@ -30,7 +30,8 @@ export const ProductCard = ({ name, photos, cover, hover, isNew, sizes }: Produc
         onClick={() => openGallery({ label: name, photos })}
         className="group relative block aspect-3/4 w-full cursor-zoom-in overflow-hidden bg-tile"
       >
-        <Image src={cover} alt="" fill sizes={sizes} className={PHOTO} />
+        {/* The button's aria-label already names the piece for screen readers; the alt is what image search indexes */}
+        <Image src={cover} alt={name} fill sizes={sizes} className={PHOTO} />
         {hover ? <Image src={hover} alt="" fill sizes={sizes} className={`${PHOTO} opacity-0 group-hover:opacity-100`} /> : null}
         {isNew ? (
           <span className="absolute left-3.5 top-3.5 z-10 bg-ivory/85 px-2.5 py-1.25 text-[9px] font-semibold uppercase tracking-[.3em] text-charcoal backdrop-blur-sm">
